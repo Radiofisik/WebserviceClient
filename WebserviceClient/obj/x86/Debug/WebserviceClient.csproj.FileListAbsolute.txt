@@ -1,0 +1,11 @@
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\bin\Debug\WebserviceClient.exe
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\bin\Debug\WebserviceClient.pdb
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\obj\x86\Debug\WebserviceClient.Form1.resources
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\obj\x86\Debug\WebserviceClient.Properties.Resources.resources
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\obj\x86\Debug\WebserviceClient.csproj.GenerateResource.Cache
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\obj\x86\Debug\WebserviceClient.exe
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\obj\x86\Debug\WebserviceClient.pdb
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\bin\Debug\WebserviceClient.exe.config
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\obj\x86\Debug\WebserviceClient.itemform.resources
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\bin\Debug\EntityFramework.dll
+D:\Dropbox\УОС39\Webservice\cs\WebserviceClient\WebserviceClient\obj\x86\Debug\WebserviceClient.csprojResolveAssemblyReference.cache

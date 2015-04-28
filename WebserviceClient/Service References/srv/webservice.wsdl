@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:mynamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:mynamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:mynamespace">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <xsd:complexType name="orderItem">
+        <xsd:all>
+          <xsd:element name="Product" type="xsd:string" />
+          <xsd:element name="Quantity" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="orderItemArray">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:orderItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="order">
+        <xsd:all>
+          <xsd:element name="id" type="xsd:int" />
+          <xsd:element name="Organizationfull" type="xsd:string" />
+          <xsd:element name="Organizationshort" type="xsd:string" />
+          <xsd:element name="FIOdir" type="xsd:string" />
+          <xsd:element name="Positiondir" type="xsd:string" />
+          <xsd:element name="Reasondir" type="xsd:string" />
+          <xsd:element name="Phonedir" type="xsd:string" />
+          <xsd:element name="FIOcont" type="xsd:string" />
+          <xsd:element name="Positioncont" type="xsd:string" />
+          <xsd:element name="Phonecont" type="xsd:string" />
+          <xsd:element name="Email" type="xsd:string" />
+          <xsd:element name="INN" type="xsd:string" />
+          <xsd:element name="KPP" type="xsd:string" />
+          <xsd:element name="OGRN" type="xsd:string" />
+          <xsd:element name="Schet" type="xsd:string" />
+          <xsd:element name="Korrschet" type="xsd:string" />
+          <xsd:element name="BIK" type="xsd:string" />
+          <xsd:element name="Bankname" type="xsd:string" />
+          <xsd:element name="Addrlegal" type="xsd:string" />
+          <xsd:element name="Addrfact" type="xsd:string" />
+          <xsd:element name="Comment" type="xsd:string" />
+          <xsd:element name="items" type="tns:orderItemArray" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="orderArray">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:order[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="get_messageRequest">
+    <wsdl:part name="number" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="get_messageResponse">
+    <wsdl:part name="output" type="tns:orderArray" />
+  </wsdl:message>
+  <wsdl:portType name="mynamePortType">
+    <wsdl:operation name="get_message">
+      <wsdl:input message="tns:get_messageRequest" />
+      <wsdl:output message="tns:get_messageResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="mynameBinding" type="tns:mynamePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="get_message">
+      <soap:operation soapAction="http://new.kgnic.ru/wp-content/plugins/orderform/webservice.php/get_message" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="xsd:mynamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="xsd:mynamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="myname">
+    <wsdl:port name="mynamePort" binding="tns:mynameBinding">
+      <soap:address location="http://new.kgnic.ru/wp-content/plugins/orderform/webservice.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
